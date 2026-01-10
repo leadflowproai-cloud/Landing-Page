@@ -1,0 +1,270 @@
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SparkLogic AI | Authority-First Roofing System</title>
+  <meta name="description" content="Stop chasing homeowners. Protect your authority. A decision system for contractors who refuse to beg, discount, or babysit leads." />
+  <style>
+    :root{
+      --bg:#0b0f14; --panel:#0f1620; --text:#e9eef5; --muted:#a9b6c6;
+      --line:#1e2a3a; --accent:#6aa3ff; --accent2:#7cf2c2;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1060px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 700px at 20% 0%, rgba(106,163,255,.18), transparent 60%),
+                  radial-gradient(900px 600px at 90% 10%, rgba(124,242,194,.12), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.45;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 60px}
+    header{
+      display:flex; justify-content:space-between; align-items:center; gap:16px;
+      padding:10px 0 18px;
+    }
+    .brand{display:flex; align-items:center; gap:10px; letter-spacing:.3px}
+    .logo{
+      width:34px; height:34px; border-radius:10px;
+      background: linear-gradient(135deg, rgba(106,163,255,.85), rgba(124,242,194,.85));
+      box-shadow: var(--shadow);
+    }
+    .brand strong{font-weight:800}
+    nav{display:flex; gap:14px; flex-wrap:wrap}
+    nav a{font-size:14px; color:var(--muted); text-decoration:none}
+    nav a:hover{color:var(--text)}
+    .hero{
+      margin-top:18px;
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(15,22,32,.92), rgba(15,22,32,.62));
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .hero-inner{padding:34px 22px}
+    .kicker{
+      display:inline-flex; gap:8px; align-items:center;
+      font-size:13px; color:var(--muted);
+      border:1px solid var(--line); border-radius:999px;
+      padding:8px 12px; background: rgba(11,15,20,.35);
+    }
+    .dot{width:8px; height:8px; border-radius:99px; background: var(--accent2)}
+    h1{margin:14px 0 10px; font-size:42px; line-height:1.08; letter-spacing:-.6px}
+    .subhead{max-width:760px; color:var(--muted); font-size:18px; margin:0 0 22px}
+    .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:10px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px; border-radius:12px; text-decoration:none;
+      border:1px solid var(--line); font-weight:700; font-size:14px;
+    }
+    .btn-primary{
+      background: linear-gradient(135deg, rgba(106,163,255,.95), rgba(124,242,194,.85));
+      color:#081018; border-color:transparent;
+    }
+    .btn-ghost{color:var(--text); background: rgba(11,15,20,.25)}
+    .btn:hover{transform: translateY(-1px)}
+    .grid{
+      display:grid; grid-template-columns: 1.2fr .8fr; gap:18px;
+      padding:22px; border-top:1px solid var(--line);
+      background: rgba(11,15,20,.18);
+    }
+    .card{
+      border:1px solid var(--line);
+      background: rgba(11,15,20,.28);
+      border-radius:var(--radius);
+      padding:18px;
+    }
+    h2{margin:0 0 10px; font-size:22px; letter-spacing:-.2px}
+    .muted{color:var(--muted)}
+    .bullets{margin:12px 0 0; padding:0; list-style:none; display:grid; gap:10px}
+    .bullets li{
+      padding:12px 12px; border:1px solid var(--line); border-radius:14px;
+      background: rgba(15,22,32,.35);
+    }
+    .bullets strong{display:block; margin-bottom:4px}
+    .section{margin-top:22px}
+    .two{
+      display:grid; grid-template-columns: 1fr 1fr; gap:18px;
+      margin-top:18px;
+    }
+    .quote{
+      border-left:3px solid rgba(124,242,194,.8);
+      padding-left:12px; margin:10px 0 0; color:var(--muted);
+      font-style:italic;
+    }
+    .tag{
+      display:inline-block; font-size:12px; color:var(--muted);
+      border:1px solid var(--line); border-radius:999px;
+      padding:6px 10px; margin-top:8px;
+    }
+    footer{
+      margin-top:34px; padding-top:18px; border-top:1px solid var(--line);
+      color:var(--muted); font-size:13px;
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+    }
+    @media (max-width: 860px){
+      h1{font-size:34px}
+      .grid{grid-template-columns:1fr}
+      .two{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <strong>SparkLogic AI</strong><br/>
+          <span class="muted" style="font-size:12px;">Authority-first roofing system</span>
+        </div>
+      </div>
+      <nav>
+        <a href="#how">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#fit">Who it’s for</a>
+        <a href="#access">Early access</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <div class="hero-inner">
+        <div class="kicker"><span class="dot"></span>Built for retail contractors. Not script-chasers.</div>
+        <h1>Stop Chasing Homeowners.<br/>Start Protecting Your Authority.</h1>
+        <p class="subhead">
+          This isn’t a CRM. It’s a decision system for contractors who don’t want to beg, discount, or babysit leads.
+          Built by someone who closed north of 50% retail, then walked away when the industry stopped making sense.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#how">See How It Works</a>
+          <a class="btn btn-ghost" href="#access">Get Early Access</a>
+        </div>
+      </div>
+
+      <div class="grid">
+        <section class="card" id="how">
+          <h2>The problem isn’t lead volume.</h2>
+          <p class="muted">
+            Most roofing software does one thing well: it turns you into a follow-up robot.
+            More texts. More reminders. More pressure.
+          </p>
+          <p class="muted">
+            That’s not selling. That’s noise.
+          </p>
+          <p class="muted">
+            The real problem contractors face is <strong>authority erosion</strong>.
+            Every unnecessary touch costs trust. Every forced close costs reputation.
+          </p>
+          <div class="quote">
+            We don’t help you close. We help homeowners decide.
+          </div>
+        </section>
+
+        <aside class="card">
+          <h2>The shift</h2>
+          <p class="muted">
+            If the homeowner feels safe, deals close themselves.
+            So instead of scripts and sequences, the system focuses on three things:
+          </p>
+          <ul class="bullets">
+            <li><strong>Protects your reputation</strong><span class="muted">Guardrails that prevent the “salesy” behavior that kills referrals.</span></li>
+            <li><strong>Controls timing</strong><span class="muted">The platform knows when not to follow up.</span></li>
+            <li><strong>Keeps you out of the way</strong><span class="muted">You show up only when it matters.</span></li>
+          </ul>
+          <span class="tag">Silence is sometimes the strongest move.</span>
+        </aside>
+      </div>
+    </main>
+
+    <section class="section two" id="features">
+      <div class="card">
+        <h2>Core features</h2>
+        <ul class="bullets">
+          <li>
+            <strong>Authority Layer</strong>
+            <span class="muted">Your presence stays calm, consistent, and professional even when you’re not there.</span>
+          </li>
+          <li>
+            <strong>Decision Timing Engine</strong>
+            <span class="muted">The system knows when not to follow up. No desperation. No over-communication.</span>
+          </li>
+          <li>
+            <strong>Reputation Guardrails</strong>
+            <span class="muted">Prevents the behaviors that cost callbacks, referrals, and sleep.</span>
+          </li>
+          <li>
+            <strong>Black Box Logic</strong>
+            <span class="muted">Homeowners see clarity. You see signals. The pressure never shows.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card" id="fit">
+        <h2>Who this is for</h2>
+        <p class="muted">
+          This is for contractors who close retail, don’t want to run storms forever,
+          refuse to discount to survive, and care about how they’re remembered.
+        </p>
+        <p class="muted">
+          If you need scripts to convince people, this isn’t for you.
+        </p>
+
+        <h2 style="margin-top:18px;">Who this is not for</h2>
+        <p class="muted">
+          If your business depends on high-pressure tactics, endless “just checking in” texts,
+          and managers yelling about close rates, you’ll hate this system.
+        </p>
+        <p class="muted"><strong>And that’s intentional.</strong></p>
+      </div>
+    </section>
+
+    <section class="section two">
+      <div class="card">
+        <h2>Social proof (placeholders)</h2>
+        <ul class="bullets">
+          <li><strong>“I stopped chasing homeowners and my close rate went up.”</strong><span class="muted">Retail contractor</span></li>
+          <li><strong>“Feels like I finally have leverage again.”</strong><span class="muted">Owner-operator</span></li>
+          <li><strong>“This is how I actually sell, just automated.”</strong><span class="muted">Field rep</span></li>
+        </ul>
+      </div>
+
+      <div class="card" id="access">
+        <h2>Early access</h2>
+        <p class="muted">
+          Early access is limited. Not because of hype. Because this only works when it’s used correctly.
+        </p>
+        <p class="muted">
+          You’re not buying software. You’re stepping into a different way of operating.
+        </p>
+
+        <!-- Replace # with your actual form / checkout link -->
+        <div class="cta-row" style="margin-top:14px;">
+          <a class="btn btn-primary" href="#">Request Access</a>
+          <a class="btn btn-ghost" href="#">Talk to Us</a>
+        </div>
+
+        <p class="muted" style="margin-top:12px; font-size:13px;">
+          Tip: wire “Request Access” to your waitlist form or checkout. Wire “Talk to Us” to Calendly.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> SparkLogic AI</div>
+      <div class="muted">Authority-first systems for retail contractors.</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+```
