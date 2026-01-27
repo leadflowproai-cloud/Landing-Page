@@ -87,7 +87,64 @@
             <p class="mt-6 text-blue-200 text-xs font-bold tracking-widest uppercase">Operational intelligence by sparkLogix</p>
         </div>
     </section>
+<section id="register" class="py-24 px-6 border-t border-slate-900 bg-slate-950/20">
+    <div class="max-w-xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">Join the beta rollout</h2>
+            <p class="text-slate-400">Secure your lifetime rate lock today. We will reach out with your credentials as your region’s rollout goes live.</p>
+        </div>
 
+        <form id="beta-form" class="space-y-4">
+            <div class="grid grid-cols-2 gap-4">
+                <input type="text" name="first_name" placeholder="First name" required class="bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 focus:border-blue-500 outline-none transition-all">
+                <input type="text" name="last_name" placeholder="Last name" required class="bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 focus:border-blue-500 outline-none transition-all">
+            </div>
+            <input type="email" name="email" placeholder="Professional email" required class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 focus:border-blue-500 outline-none transition-all">
+            <input type="text" name="company" placeholder="Company name" required class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 focus:border-blue-500 outline-none transition-all">
+            
+            <button type="submit" id="submit-btn" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-900/20 transition-all active:scale-95">
+                Secure my beta access
+            </button>
+            <p id="status-msg" class="text-center text-xs mt-4 hidden"></p>
+        </form>
+    </div>
+</section>
+
+<script>
+    const form = document.getElementById('beta-form');
+    const btn = document.getElementById('submit-btn');
+    const msg = document.getElementById('status-msg');
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        btn.disabled = true;
+        btn.innerText = 'Processing...';
+        
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+        
+        try {
+            // Forwarding to your sparkLogix Google Webhook
+            await fetch('https://script.google.com/macros/s/AKfycbyV1fc7wR4ktMELP4yF5NkhfuxNzn3kM4uN-sCKEc16IsgLQbKc7pizmJ2J5oGAXJgSzA/exec', {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+
+            msg.innerText = 'Success. Your rate lock is secured. We have notified the admin.';
+            msg.className = 'text-center text-xs mt-4 text-green-400 block';
+            form.reset();
+        } catch (err) {
+            msg.innerText = 'Connectivity error. Please try again.';
+            msg.className = 'text-center text-xs mt-4 text-red-400 block';
+        } finally {
+            btn.disabled = false;
+            btn.innerText = 'Secure my beta access';
+        }
+    });
+</script>
+    
     <footer class="py-12 text-center text-[10px] text-slate-700 uppercase tracking-[0.4em]">
         LeadFlowPro Suite © 2026 // A project of sparkLogix
     </footer>
